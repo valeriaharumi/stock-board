@@ -1,0 +1,47 @@
+.card-container{
+    border: 1px solid #D1D5D7;
+    width: 296px;
+    height: 289.9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    .card-text-container{
+        padding: 75px 40px 0px 40px;
+
+        .active-name{
+            color: #7E868E;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14.89px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .price-title{
+            font-weight: bold;
+        }
+
+        .active-price{
+            font-size: 24px;
+            font-weight: bold;
+            color: #00C853;
+            margin-top: 20px;
+        }
+    }
+
+    .image-container{
+        position: absolute;
+        bottom: 84px;
+        width: 100%;
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+
+}

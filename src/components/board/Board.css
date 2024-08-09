@@ -1,0 +1,46 @@
+.board-container {
+    padding: 54px 80px;
+}
+
+.board-header {
+    display: flex;
+    justify-content: space-between;
+
+    h1 {
+        font-size: 42px;
+        font-weight: 700;
+        line-height: 52.58px;
+        margin: unset;
+    }
+
+    .board-filters {
+        font-size: 14px;
+        color: #7E868E;
+
+        span {
+            margin-right: 10px;
+        }
+
+        button {
+            border: none;
+            color: #7E868E;
+            background-color: #ECEDEE;
+            font-weight: 500;
+            font-family: DIN Pro;
+            line-height: 17.37px;
+            text-align: center;
+            padding: 10px 35px;
+            border-radius: 20px;
+            margin-left: 10px;
+        }
+
+        button.selected {
+            color: #FFFFFF;
+            background-color: #00ADD2;
+        }
+    }
+}
+
+.board-body{
+    margin-top: 60px;
+}

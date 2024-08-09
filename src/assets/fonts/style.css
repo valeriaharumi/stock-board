@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'DIN Pro';
+    src: local('DIN Pro Regular'), local('DIN-Pro-Regular'),
+        url('DINPro.woff2') format('woff2'),
+        url('DINPro.woff') format('woff'),
+        url('DINPro.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+  }

@@ -1,0 +1,9 @@
+header {
+    background-color: black;
+    height: 80px;
+    align-content: center;
+
+    img{
+        margin-left: 80px;
+    }
+}
