@@ -6,6 +6,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+    margin-bottom: 40px;
 
     .card-text-container{
         padding: 75px 40px 0px 40px;
@@ -29,6 +30,13 @@
             font-weight: bold;
             color: #00C853;
             margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .active-price.down{
+            color: #F44336;
         }
     }
 
