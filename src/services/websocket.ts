@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import { useStockStore } from '../store/stockStore';
 
 const useWebSocket = (url: string, onMessage: (data: any) => void) => {
     const [error, setError] = useState<string | null>(null);
     const ws = useRef<WebSocket | null>(null);
+    const hasData = useStockStore((state) => state.hasData);
 
     useEffect(() => {
         try {
@@ -18,10 +20,15 @@ const useWebSocket = (url: string, onMessage: (data: any) => void) => {
             };
 
             ws.current.onerror = () => {
-                setError('Falha ao conectar ao servidor.');
+                if (!hasData) {
+                    setError('Falha ao conectar ao servidor.');
+                }
             };
+
         } catch (err) {
-            setError('Um erro ocorreu ao conectar ao servidor.');
+            if (!hasData) {
+                setError('Um erro ocorreu ao conectar ao servidor.');
+            }
         }
 
         return () => {
@@ -29,7 +36,7 @@ const useWebSocket = (url: string, onMessage: (data: any) => void) => {
                 ws.current.close();
             }
         };
-    }, [url, onMessage, error]);
+    }, [url, onMessage, error, hasData]);
 
     return { ws: ws.current, error };
 };

@@ -7,7 +7,7 @@ import useWebSocket from "../../services/websocket";
 
 const Board: React.FC = () => {
 
-    const { stocks, getSortedStocks , updateStock } = useStockStore();
+    const { stocks, getSortedStocks , updateStock, hasData } = useStockStore();
 
     const { error } = useWebSocket('ws://localhost:8080/quotes', (data) => {
         const code = Object.keys(data)[0];
@@ -19,15 +19,19 @@ const Board: React.FC = () => {
 
     const [sortType, setSortType] = useState<'up' | 'down' | null>(null);
 
-    const handleSort = (type: 'up' | 'down') => {
-        setSortType(type);
+    const handleSort = (type: 'up' | 'down' | null) => {
+        if (sortType === type) {
+            setSortType(null);
+        } else {
+            setSortType(type);
+        }
     };
 
     const sortedStocks = sortType 
     ? getSortedStocks().filter(([, stock]) => stock.status === sortType)
     : Object.entries(stocks);
 
-    if (error) {
+    if (error && !hasData) {
         return (
             <div className="error-container">
                 <div className="error-content">

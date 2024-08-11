@@ -8,6 +8,7 @@ type StockStore = {
             status: 'up' | 'down';
             timestamp: number;
         }>;
+    hasData: boolean;
     updateStock: (code: string, newPrice: number, timestamp: number) => void;
     getSortedStocks: () => [string, 
         { 
@@ -21,6 +22,7 @@ type StockStore = {
 
 export const useStockStore = create<StockStore>((set, get) => ({
     stocks: {},
+    hasData: false,
     updateStock: (code, newPrice, timestamp) =>
         set((state) => {
             const currentStock = state.stocks[code];
@@ -32,6 +34,7 @@ export const useStockStore = create<StockStore>((set, get) => ({
                     ...state.stocks,
                     [code]: { currentPrice: newPrice, previousPrice, status, timestamp },
                 },
+                hasData: true,
             };
         }),
     getSortedStocks: () => {
