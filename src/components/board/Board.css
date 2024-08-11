@@ -5,6 +5,7 @@
 .board-header {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     h1 {
         font-size: 42px;
@@ -16,10 +17,9 @@
     .board-filters {
         font-size: 14px;
         color: #7E868E;
-
-        span {
-            margin-right: 10px;
-        }
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
 
         button {
             border: none;
@@ -41,7 +41,7 @@
     }
 }
 
-.board-body{
+.board-body {
     margin-top: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -49,18 +49,37 @@
     width: 100%;
 }
 
-.error-container{
+.error-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
 
-    .error-content{
+    .error-content {
         padding: 20px;
         border-radius: 8px;
         background-color: #f8d7da;
         color: #721c24;
         border: 1px solid #f5c6cb;
+    }
+}
+
+@media (max-width: 600px) {
+    .board-container {
+        padding: 24px 16px;
+    }
+
+    .board-header {
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .board-filters {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 }

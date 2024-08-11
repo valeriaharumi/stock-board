@@ -50,18 +50,20 @@ const Board: React.FC = () => {
                 <h1>Explore o mercado</h1>
                 <div className="board-filters">
                     <span>Ordenar:</span>
-                    <button 
-                        onClick={() => handleSort('up')} 
-                        className={sortType === 'up' ? 'selected' : ''}
-                    >
-                        Em alta
-                    </button>
-                    <button
-                        onClick={() => handleSort('down')} 
-                        className={sortType === 'down' ? 'selected' : ''}
-                    >
-                        Em baixa
-                    </button>
+                    <div>
+                        <button 
+                            onClick={() => handleSort('up')} 
+                            className={sortType === 'up' ? 'selected' : ''}
+                        >
+                            Em alta
+                        </button>
+                        <button
+                            onClick={() => handleSort('down')} 
+                            className={sortType === 'down' ? 'selected' : ''}
+                        >
+                            Em baixa
+                        </button>
+                    </div>
                 </div>
             </div>
             <div className="board-body">

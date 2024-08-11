@@ -7,3 +7,9 @@ header {
         margin-left: 80px;
     }
 }
+
+@media (max-width: 600px) {
+    img{
+        margin-left: 16px !important;
+    }
+}
