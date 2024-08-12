@@ -9,7 +9,9 @@ header {
 }
 
 @media (max-width: 600px) {
-    img{
-        margin-left: 16px !important;
+    header {
+        img{
+            margin-left: 16px !important;
+        }
     }
 }
